@@ -1,0 +1,15 @@
+<h1>Cart Index Page</h1> 
+
+<%= cart.each do |product| %>
+    <p><%= product %></p>
+<% end %>      
+
+
+<%= form_tag ({controller: 'products', action: 'add', method: 'post'}) do %>
+  <input name=product>
+  <input type=submit value='add to cart'>
+<% end %>
+<!-- 
+action: 'add' is sending it out to the add method in our products controller
+method: 'post' since we are sending data to the server rather then getting data
+controller: 'products'  sending it to the Products Controller -->
